@@ -1,0 +1,578 @@
+[
+    {
+        "id": 1,
+        "team1": "México",
+        "team2": "África do Sul",
+        "date": "2026-06-11T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 2,
+        "team1": "República da Coreia",
+        "team2": "República Tcheca",
+        "date": "2026-06-11T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 3,
+        "team1": "Canadá",
+        "team2": "Bósnia e Herzegovina",
+        "date": "2026-06-12T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 4,
+        "team1": "Estados Unidos",
+        "team2": "Paraguai",
+        "date": "2026-06-12T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 5,
+        "team1": "Catar",
+        "team2": "Suíça",
+        "date": "2026-06-13T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 6,
+        "team1": "Brasil",
+        "team2": "Marrocos",
+        "date": "2026-06-13T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 7,
+        "team1": "Haiti",
+        "team2": "Escócia",
+        "date": "2026-06-13T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 8,
+        "team1": "Austrália",
+        "team2": "Turquia",
+        "date": "2026-06-14T01:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 9,
+        "team1": "Alemanha",
+        "team2": "Curaçau",
+        "date": "2026-06-14T14:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 10,
+        "team1": "Costa do Marfim",
+        "team2": "Equador",
+        "date": "2026-06-14T20:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 11,
+        "team1": "Holanda",
+        "team2": "Japão",
+        "date": "2026-06-14T17:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 12,
+        "team1": "Suécia",
+        "team2": "Tunísia",
+        "date": "2026-06-14T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 13,
+        "team1": "Espanha",
+        "team2": "Cabo Verde",
+        "date": "2026-06-15T13:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 14,
+        "team1": "Arábia Saudita",
+        "team2": "Uruguai",
+        "date": "2026-06-15T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 15,
+        "team1": "Bélgica",
+        "team2": "Egito",
+        "date": "2026-06-15T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 16,
+        "team1": "Irã",
+        "team2": "Nova Zelândia",
+        "date": "2026-06-15T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 17,
+        "team1": "Áustria",
+        "team2": "Jordânia",
+        "date": "2026-06-17T01:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 18,
+        "team1": "França",
+        "team2": "Senegal",
+        "date": "2026-06-16T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 19,
+        "team1": "Iraque",
+        "team2": "Noruega",
+        "date": "2026-06-16T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 20,
+        "team1": "Argentina",
+        "team2": "Argélia",
+        "date": "2026-06-16T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 21,
+        "team1": "Portugal",
+        "team2": "República Democrática do Congo",
+        "date": "2026-06-17T14:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 22,
+        "team1": "Inglaterra",
+        "team2": "Croácia",
+        "date": "2026-06-17T17:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 23,
+        "team1": "Gana",
+        "team2": "Panamá",
+        "date": "2026-06-17T20:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 24,
+        "team1": "Uzbequistão",
+        "team2": "Colômbia",
+        "date": "2026-06-17T21:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 25,
+        "team1": "República Tcheca",
+        "team2": "África do Sul",
+        "date": "2026-06-18T13:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 26,
+        "team1": "Suíça",
+        "team2": "Bósnia e Herzegovina",
+        "date": "2026-06-18T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 27,
+        "team1": "Canadá",
+        "team2": "Catar",
+        "date": "2026-06-18T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 28,
+        "team1": "México",
+        "team2": "República da Coreia",
+        "date": "2026-06-18T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 29,
+        "team1": "Turquia",
+        "team2": "Paraguai",
+        "date": "2026-06-20T00:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 30,
+        "team1": "Estados Unidos",
+        "team2": "Austrália",
+        "date": "2026-06-19T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 31,
+        "team1": "Escócia",
+        "team2": "Marrocos",
+        "date": "2026-06-19T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 32,
+        "team1": "Brasil",
+        "team2": "Haiti",
+        "date": "2026-06-19T21:30",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 33,
+        "team1": "Tunísia",
+        "team2": "Japão",
+        "date": "2026-06-20T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 34,
+        "team1": "Holanda",
+        "team2": "Suécia",
+        "date": "2026-06-20T14:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 35,
+        "team1": "Alemanha",
+        "team2": "Costa do Marfim",
+        "date": "2026-06-20T17:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 36,
+        "team1": "Equador",
+        "team2": "Curaçau",
+        "date": "2026-06-20T21:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 37,
+        "team1": "Espanha",
+        "team2": "Arábia Saudita",
+        "date": "2026-06-21T13:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 38,
+        "team1": "Bélgica",
+        "team2": "Irã",
+        "date": "2026-06-21T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 39,
+        "team1": "Uruguai",
+        "team2": "Cabo Verde",
+        "date": "2026-06-21T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 40,
+        "team1": "Nova Zelândia",
+        "team2": "Egito",
+        "date": "2026-06-21T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 41,
+        "team1": "Argentina",
+        "team2": "Áustria",
+        "date": "2026-06-22T14:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 42,
+        "team1": "França",
+        "team2": "Iraque",
+        "date": "2026-06-22T18:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 43,
+        "team1": "Noruega",
+        "team2": "Senegal",
+        "date": "2026-06-22T21:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 44,
+        "team1": "Jordânia",
+        "team2": "Argélia",
+        "date": "2026-06-23T00:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 45,
+        "team1": "Portugal",
+        "team2": "Uzbequistão",
+        "date": "2026-06-23T14:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 46,
+        "team1": "Inglaterra",
+        "team2": "Gana",
+        "date": "2026-06-23T17:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 47,
+        "team1": "Panamá",
+        "team2": "Croácia",
+        "date": "2026-06-23T20:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 48,
+        "team1": "Colômbia",
+        "team2": "República Democrática do Congo",
+        "date": "2026-06-23T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 49,
+        "team1": "Suíça",
+        "team2": "Canadá",
+        "date": "2026-06-24T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 50,
+        "team1": "Bósnia e Herzegovina",
+        "team2": "Catar",
+        "date": "2026-06-24T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 51,
+        "team1": "Escócia",
+        "team2": "Brasil",
+        "date": "2026-06-24T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 52,
+        "team1": "Marrocos",
+        "team2": "Haiti",
+        "date": "2026-06-24T19:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 53,
+        "team1": "República Tcheca",
+        "team2": "México",
+        "date": "2026-06-24T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 54,
+        "team1": "África do Sul",
+        "team2": "República da Coreia",
+        "date": "2026-06-24T22:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 55,
+        "team1": "Equador",
+        "team2": "Alemanha",
+        "date": "2026-06-25T17:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 56,
+        "team1": "Curaçau",
+        "team2": "Costa do Marfim",
+        "date": "2026-06-25T17:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 57,
+        "team1": "Japão",
+        "team2": "Suécia",
+        "date": "2026-06-25T20:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 58,
+        "team1": "Tunísia",
+        "team2": "Holanda",
+        "date": "2026-06-25T20:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 59,
+        "team1": "Turquia",
+        "team2": "Estados Unidos",
+        "date": "2026-06-25T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 60,
+        "team1": "Paraguai",
+        "team2": "Austrália",
+        "date": "2026-06-25T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 61,
+        "team1": "Noruega",
+        "team2": "França",
+        "date": "2026-06-26T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 62,
+        "team1": "Senegal",
+        "team2": "Iraque",
+        "date": "2026-06-26T16:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 63,
+        "team1": "Cabo Verde",
+        "team2": "Arábia Saudita",
+        "date": "2026-06-26T21:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 64,
+        "team1": "Uruguai",
+        "team2": "Espanha",
+        "date": "2026-06-26T21:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 65,
+        "team1": "Egito",
+        "team2": "Irã",
+        "date": "2026-06-27T00:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 66,
+        "team1": "Nova Zelândia",
+        "team2": "Bélgica",
+        "date": "2026-06-27T00:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 67,
+        "team1": "Panamá",
+        "team2": "Inglaterra",
+        "date": "2026-06-27T18:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 68,
+        "team1": "Croácia",
+        "team2": "Gana",
+        "date": "2026-06-27T18:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 69,
+        "team1": "Colômbia",
+        "team2": "Portugal",
+        "date": "2026-06-27T20:30",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 70,
+        "team1": "República Democrática do Congo",
+        "team2": "Uzbequistão",
+        "date": "2026-06-27T20:30",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 71,
+        "team1": "Argélia",
+        "team2": "Áustria",
+        "date": "2026-06-27T23:00",
+        "result": null,
+        "result_winner": null
+    },
+    {
+        "id": 72,
+        "team1": "Jordânia",
+        "team2": "Argentina",
+        "date": "2026-06-28T23:00",
+        "result": null,
+        "result_winner": null
+    }
+]
