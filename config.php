@@ -25,6 +25,67 @@ function saveJson($file, $data) {
     file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
+// Funções para o chat
+function loadMessages() {
+    $messages = loadJson('conversas.json');
+    return is_array($messages) ? $messages : [];
+}
+
+function saveMessage($message) {
+    $messages = loadMessages();
+    $messages[] = $message;
+    saveJson('conversas.json', $messages);
+}
+
+// Funções para histórico de apostas (comunidade)
+function loadAllBetsWithDetails() {
+    $bets = loadJson(FILE_BETS);
+    $matches = loadJson(FILE_MATCHES);
+    $users = loadJson(FILE_USERS);
+    
+    $result = [];
+    
+    foreach ($bets as $bet) {
+        $match = null;
+        foreach ($matches as $m) {
+            if ($m['id'] == $bet['match_id']) {
+                $match = $m;
+                break;
+            }
+        }
+        
+        $user = null;
+        foreach ($users as $u) {
+            if ($u['id'] == $bet['user_id']) {
+                $user = $u;
+                break;
+            }
+        }
+        
+        if (!$match || !$user) continue;
+        
+        $betItem = [
+            'id' => $bet['id'] ?? uniqid(),
+            'user_id' => $bet['user_id'],
+            'user_name' => $user['name'],
+            'match_id' => $bet['match_id'],
+            'team1' => $match['team1'],
+            'team2' => $match['team2'],
+            'match_date' => $match['date'],
+            'type' => $bet['type'],
+            'prediction_winner' => $bet['prediction_winner'] ?? $bet['prediction'] ?? null,
+            'prediction_score' => $bet['prediction_score'] ?? $bet['prediction'] ?? null,
+            'created_at' => $bet['created_at'] ?? date('Y-m-d H:i:s')
+        ];
+        
+        $result[] = $betItem;
+    }
+    
+    // Ordenar por data mais recente
+    usort($result, fn($a, $b) => strtotime($b['created_at']) <=> strtotime($a['created_at']));
+    return $result;
+}
+
 // Função para salvar comprovante
 function saveComprovante($file) {
     if ($file['error'] !== UPLOAD_ERR_OK) {

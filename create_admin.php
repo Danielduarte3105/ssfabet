@@ -3,8 +3,8 @@ require 'config.php';
 
 // ================== CONFIGURE AQUI ==================
 $admin_name     = "Admin";
-$admin_email    = "admin@ssfabet.com";
-$admin_password = "123456";   // Mude para uma senha forte depois!
+$admin_email    = "admin@sfa.adv.br";
+$admin_password = "Admin@1234";   // Mude para uma senha forte depois!
 // ====================================================
 
 $users = loadJson(FILE_USERS);

@@ -12,26 +12,5 @@
         "email": "admin@sfa.adv.br",
         "password": "$2y$12$Rr2r\/c\/n\/BUFWjIl7LHuS.zUBB\/LiCRXs5lgOh72ACLXDSvpZm94q",
         "total_points": 0
-    },
-    {
-        "id": 3,
-        "name": "Osvaldo Marmo",
-        "email": "osvaldo.marmo@sfa.adv.br",
-        "password": "$2y$12$Qc.yq1xclPfzhimSa7YFEOtttuwk13CNirIAtjOtAHteVs9HCs4aC",
-        "total_points": 0
-    },
-    {
-        "id": 4,
-        "name": "Mateus Estevam",
-        "email": "mateus.estevam@sfa.adv.br",
-        "password": "$2y$12$gcPyUGVIkBciP.LYPaWXeeluHwc4IidBOyRFHiCN9Zl7\/a0TZ5vWW",
-        "total_points": 0
-    },
-    {
-        "id": 5,
-        "name": "Orion França",
-        "email": "orion.franca@sfa.adv.br",
-        "password": "$2y$12$l2CQVAE6AzLCuU5\/0WQcBOHnrTnJjzouWIS7MsoHjPMul1FZPYFlG",
-        "total_points": 0
     }
 ]

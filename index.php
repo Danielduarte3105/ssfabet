@@ -184,6 +184,372 @@ $otherRanks = array_slice($ranking, 7);
             transition: all 0.3s ease;
         }
 
+/* Chat Flutuante */
+.chat-bubble {
+    position: fixed;
+    top: 710px;  /* Ajuste este valor conforme necessário */
+    right: 30px;
+    z-index: 1000;
+}
+
+/* Ajuste para telas menores */
+@media (max-height: 800px) {
+    .chat-bubble {
+        top: 150px;
+    }
+}
+
+@media (max-height: 600px) {
+    .chat-bubble {
+        top: 100px;
+    }
+}
+
+.chat-window {
+    position: fixed;
+    top: 200px;  /* Mesmo valor do botão */
+    right: 30px;
+    width: 380px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+.chat-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.chat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+.chat-window {
+    position: fixed;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    width: 380px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+.chat-window.open {
+    display: flex;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.chat-header h6 i {
+    margin-right: 8px;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.chat-close:hover {
+    transform: scale(1.1);
+}
+
+.chat-tabs {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f8f9fa;
+}
+
+.chat-tab {
+    flex: 1;
+    padding: 0.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #666;
+}
+
+.chat-tab.active {
+    color: #667eea;
+    border-bottom: 2px solid #667eea;
+}
+
+.chat-tab:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.chat-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+/* Histórico de Apostas */
+.bet-history-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-left: 3px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.bet-history-item:hover {
+    transform: translateX(3px);
+    background: #e9ecef;
+}
+
+.bet-history-user {
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 0.3rem;
+}
+
+.bet-history-user i {
+    margin-right: 5px;
+}
+
+.bet-history-match {
+    font-size: 0.85rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+}
+
+.bet-history-details {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.bet-history-details span {
+    display: inline-block;
+    background: #e9ecef;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+}
+
+/* Mensagens do Chat */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+}
+
+.message-own {
+    align-self: flex-end;
+}
+
+.message-other {
+    align-self: flex-start;
+}
+
+.message-header {
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+    padding: 0 0.5rem;
+}
+
+.message-own .message-header {
+    text-align: right;
+    color: #667eea;
+}
+
+.message-other .message-header {
+    color: #764ba2;
+}
+
+.message-bubble {
+    padding: 0.6rem 1rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    word-wrap: break-word;
+}
+
+.message-own .message-bubble {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message-other .message-bubble {
+    background: #f0f0f0;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.message-time {
+    font-size: 0.65rem;
+    color: #999;
+    margin-top: 0.2rem;
+    padding: 0 0.5rem;
+}
+
+.message-own .message-time {
+    text-align: right;
+}
+
+.chat-input-area {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 0.5rem;
+    background: white;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.6rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.chat-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.chat-send {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chat-send:hover {
+    transform: scale(1.05);
+}
+
+.empty-chat {
+    text-align: center;
+    color: #999;
+    padding: 2rem;
+}
+
+.empty-chat i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 1rem;
+    color: #667eea;
+}
+
+/* Ajuste do botão scroll to top para não conflitar com o chat */
+.scroll-top-btn {
+    bottom: 30px;
+    right: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .chat-bubble {
+        bottom: 30px;
+        right: 20px;
+        transform: none;
+    }
+    
+    .chat-window {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+        top: auto;
+        bottom: 100px;
+        transform: none;
+        height: 450px;
+    }
+    
+    .chat-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+    
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
         .navbar-custom:hover {
             background: rgba(0, 0, 0, 0.4);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -860,7 +1226,8 @@ $otherRanks = array_slice($ranking, 7);
                                                 <?php endif; ?>
                                             </div>
 
-                                        <?php elseif ($canBet): ?>
+                                            <?php elseif ($canBet): ?>
+                                                
                                             <div class="combo-bet-container">
                                                 <h6 class="mb-3">
                                                     <i class="fas fa-gem"></i> Aposta Combinada
@@ -871,7 +1238,8 @@ $otherRanks = array_slice($ranking, 7);
                                                         <label>
                                                             <i class="fas fa-trophy"></i> Quem Vence?
                                                         </label>
-                                                        <select id="winner_<?= $match['id'] ?>" class="form-select">
+                                                        <select id="winner_<?= $match['id'] ?>" class="form-select" 
+                                                                onchange="updateScoreLabels(<?= $match['id'] ?>, '<?= addslashes($match['team1']) ?>', '<?= addslashes($match['team2']) ?>')">
                                                             <option value="">Selecione...</option>
                                                             <option value="home">🏠 <?= htmlspecialchars($match['team1']) ?></option>
                                                             <option value="draw">⚖️ Empate</option>
@@ -879,22 +1247,23 @@ $otherRanks = array_slice($ranking, 7);
                                                         </select>
                                                     </div>
                                                     <div class="selection-group">
-                                                        <label>
-                                                            <i class="fas fa-chart-line"></i> Placar Exato
+                                                        <label id="score_label_<?= $match['id'] ?>">
+                                                            <i class="fas fa-chart-line"></i> Placar (Vencedor × Perdedor)
                                                         </label>
                                                         <div class="d-flex gap-2 align-items-center">
-                                                            <select id="score_home_<?= $match['id'] ?>" class="form-select">
+                                                            <select id="score_first_<?= $match['id'] ?>" class="form-select">
                                                                 <?php for($i=0; $i<=9; $i++): ?>
                                                                     <option value="<?= $i ?>"><?= $i ?></option>
                                                                 <?php endfor; ?>
                                                             </select>
                                                             <span class="fw-bold">×</span>
-                                                            <select id="score_away_<?= $match['id'] ?>" class="form-select">
+                                                            <select id="score_second_<?= $match['id'] ?>" class="form-select">
                                                                 <?php for($i=0; $i<=9; $i++): ?>
                                                                     <option value="<?= $i ?>"><?= $i ?></option>
                                                                 <?php endfor; ?>
                                                             </select>
                                                         </div>
+                                                        <small class="text-muted" id="score_helper_<?= $match['id'] ?>"></small>
                                                     </div>
                                                 </div>
                                                 <button class="btn-combo" onclick="confirmComboBet(<?= $match['id'] ?>, '<?= addslashes($match['team1']) ?>', '<?= addslashes($match['team2']) ?>')">
@@ -902,7 +1271,7 @@ $otherRanks = array_slice($ranking, 7);
                                                 </button>
                                             </div>
 
-                                        <?php else: ?>
+                                            <?php else: ?>
                                             <div class="alert-warning-custom p-3 rounded text-center">
                                                 <i class="fas fa-hourglass-end"></i> 
                                                 Prazo para apostas e edições encerrado! Esta partida começará em breve.
@@ -1150,6 +1519,59 @@ $otherRanks = array_slice($ranking, 7);
         </div>
     </div>
 
+        <!-- Chat Flutuante -->
+    <div class="chat-bubble">
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+            <span class="chat-badge" id="chatBadge" style="display: none;">0</span>
+        </button>
+    </div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h6><i class="fas fa-comments"></i> Comunidade SSFABET</h6>
+            <button class="chat-close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chat-tabs">
+            <button class="chat-tab active" data-tab="chat">
+                <i class="fas fa-comment"></i> Chat
+            </button>
+            <button class="chat-tab" data-tab="history">
+                <i class="fas fa-history"></i> Apostas
+            </button>
+        </div>
+        
+        <div class="chat-content">
+            <!-- Aba de Chat -->
+            <div class="chat-tab-content" id="chatTab" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="empty-chat">
+                        <i class="fas fa-comments"></i>
+                        <p>Nenhuma mensagem ainda. Seja o primeiro a conversar!</p>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem...">
+                    <button class="chat-send" id="chatSend">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Aba de Histórico de Apostas -->
+            <div class="chat-tab-content" id="historyTab" style="display: none; height: 100%; overflow-y: auto;">
+                <div id="betHistoryList">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i> Carregando apostas...
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
     <!-- Modal de Edição -->
     <div class="modal fade modal-custom" id="editModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -1175,8 +1597,411 @@ $otherRanks = array_slice($ranking, 7);
         </div>
     </div>
 
+    
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+function updateScoreLabels(matchId, team1, team2) {
+    const winner = document.getElementById(`winner_${matchId}`).value;
+    const label = document.getElementById(`score_label_${matchId}`);
+    const helper = document.getElementById(`score_helper_${matchId}`);
+
+    if (winner === 'home') {
+        label.innerHTML = `<i class="fas fa-chart-line"></i> Placar (${team1} × ${team2})`;
+        helper.textContent = `Primeiro número = gols do ${team1}`;
+    } else if (winner === 'away') {
+        label.innerHTML = `<i class="fas fa-chart-line"></i> Placar (${team2} × ${team1})`;
+        helper.textContent = `Primeiro número = gols do ${team2}`;
+    } else if (winner === 'draw') {
+        label.innerHTML = `<i class="fas fa-chart-line"></i> Placar`;
+        helper.textContent = `Ex: 1 × 1`;
+    }
+}
+
+
+
+</script>
+
+<script>
+// ==================== CHAT E HISTÓRICO DE APOSTAS ====================
+let chatMessages = [];
+let currentUserId = <?= $userId ?>;
+let currentUserName = '<?= addslashes($currentUser['name']) ?>';
+let pollingInterval = null;
+
+// Carregar mensagens
+function loadChatMessages() {
+    fetch('chat_actions.php?action=get_messages')
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) {
+                chatMessages = data.messages;
+                displayChatMessages();
+                updateChatBadge();
+            }
+        })
+        .catch(() => {});
+}
+
+// Exibir mensagens
+function displayChatMessages() {
+    const container = document.getElementById('chatMessages');
+    if (!container) return;
+
+    if (chatMessages.length === 0) {
+        container.innerHTML = `<div class="empty-chat"><i class="fas fa-comments"></i><p>Nenhuma mensagem ainda. Seja o primeiro!</p></div>`;
+        return;
+    }
+
+    container.innerHTML = chatMessages.map(msg => {
+        const isOwn = msg.user_id == currentUserId;
+        const time = new Date(msg.created_at).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        return `
+            <div class="message ${isOwn ? 'message-own' : 'message-other'}">
+                <div class="message-header"><i class="fas fa-user"></i> ${escapeHtml(msg.user_name)}</div>
+                <div class="message-bubble">${escapeHtml(msg.message)}</div>
+                <div class="message-time">${time}</div>
+            </div>
+        `;
+    }).join('');
+    container.scrollTop = container.scrollHeight;
+}
+
+// ==================== CONFIRMAR APOSTA COMBINADA ====================
+// window.confirmComboBet = function(matchId, team1, team2) {
+//     const winnerSelect = document.getElementById(`winner_${matchId}`);
+//     const firstSelect = document.getElementById(`score_first_${matchId}`);
+//     const secondSelect = document.getElementById(`score_second_${matchId}`);
+
+//     const winner = winnerSelect ? winnerSelect.value : '';
+//     const first = firstSelect ? firstSelect.value : '0';
+//     const second = secondSelect ? secondSelect.value : '0';
+
+//     if (!winner) {
+//         Swal.fire({
+//             icon: 'warning',
+//             title: 'Atenção!',
+//             text: 'Por favor, selecione o vencedor da partida!',
+//             confirmButtonColor: '#667eea'
+//         });
+//         return;
+//     }
+
+//     let score = '';
+//     let winnerText = '';
+
+//     if (winner === 'home') {
+//         score = `${first}-${second}`;
+//         winnerText = team1;
+//     } else if (winner === 'away') {
+//         score = `${second}-${first}`;   // Mantém ordem correta home-away
+//         winnerText = team2;
+//     } else { // draw
+//         score = `${first}-${second}`;
+//         winnerText = 'Empate';
+//     }
+
+//     currentMatchId = matchId;
+//     currentBetData = {
+//         type: 'combo',
+//         winner: winner,
+//         winnerText: winnerText,
+//         score: score,
+//         scoreHome: winner === 'home' ? first : (winner === 'away' ? second : first),
+//         scoreAway: winner === 'home' ? second : (winner === 'away' ? first : second)
+//     };
+
+//     const modalBody = document.getElementById('modalBody');
+//     modalBody.innerHTML = `
+//         <div class="text-center">
+//             <i class="fas fa-gem" style="font-size: 3rem; color: #667eea;"></i>
+//             <h5 class="mt-3">Confirmar Aposta Combinada</h5>
+//             <div class="alert alert-info mt-3">
+//                 <strong>${team1} VS ${team2}</strong><br><br>
+//                 <span class="badge bg-primary p-2">🏆 Vencedor: ${winnerText}</span><br><br>
+//                 <span class="badge bg-info p-2">⚽ Placar: ${score}</span>
+//             </div>
+//             <p class="mt-2">Deseja confirmar esta aposta?</p>
+//         </div>
+//     `;
+
+//     if (!confirmModal) {
+//         confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+//     }
+//     confirmModal.show();
+// };
+
+// Carregar apostas da comunidade
+function loadBetHistory() {
+    fetch('chat_actions.php?action=get_bets_history')
+        .then(r => r.json())
+        .then(data => {
+            if (data.success) displayBetHistory(data.bets);
+        });
+}
+
+function displayBetHistory(bets) {
+    const container = document.getElementById('betHistoryList');
+    if (!container) return;
+
+    if (bets.length === 0) {
+        container.innerHTML = `<div class="empty-chat"><i class="fas fa-chart-line"></i><p>Nenhuma aposta registrada ainda.</p></div>`;
+        return;
+    }
+
+    container.innerHTML = bets.map(bet => {
+        let details = '';
+        if (bet.type === 'combo' || bet.prediction_winner) {
+            const winnerText = bet.prediction_winner === 'home' ? bet.team1 : 
+                             (bet.prediction_winner === 'away' ? bet.team2 : 'Empate');
+            details = `<span><i class="fas fa-trophy"></i> ${winnerText}</span> <span><i class="fas fa-futbol"></i> ${bet.prediction_score || bet.prediction}</span>`;
+        } else {
+            details = `<span><i class="fas fa-futbol"></i> ${bet.prediction || bet.prediction_score}</span>`;
+        }
+
+        return `
+            <div class="bet-history-item">
+                <div class="bet-history-user"><i class="fas fa-user-circle"></i> ${escapeHtml(bet.user_name)}</div>
+                <div class="bet-history-match">
+                    <i class="fas fa-futbol"></i> ${escapeHtml(bet.team1)} vs ${escapeHtml(bet.team2)}
+                    <small class="text-muted"> - ${new Date(bet.match_date).toLocaleDateString('pt-BR')}</small>
+                </div>
+                <div class="bet-history-details">${details}</div>
+            </div>
+        `;
+    }).join('');
+}
+
+// ... (manter as funções sendMessage, updateChatBadge, escapeHtml, initChat iguais às que você já tem)
+
+// Função para carregar histórico de apostas
+function loadBetHistory() {
+    fetch('chat_actions.php?action=get_bets_history')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                displayBetHistory(data.bets);
+            }
+        })
+        .catch(error => console.error('Erro ao carregar histórico:', error));
+}
+
+// Função para exibir histórico de apostas
+function displayBetHistory(bets) {
+    const container = document.getElementById('betHistoryList');
+    if (!container) return;
+    
+    if (bets.length === 0) {
+        container.innerHTML = `
+            <div class="empty-chat">
+                <i class="fas fa-chart-line"></i>
+                <p>Nenhuma aposta registrada ainda.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    container.innerHTML = bets.map(bet => {
+        let betDetails = '';
+        if (bet.type === 'combo') {
+            const winnerText = bet.prediction_winner === 'home' ? bet.team1 : 
+                              (bet.prediction_winner === 'away' ? bet.team2 : 'Empate');
+            betDetails = `
+                <span><i class="fas fa-trophy"></i> ${winnerText}</span>
+                <span><i class="fas fa-futbol"></i> ${bet.prediction_score}</span>
+            `;
+        } else if (bet.type === 'winner') {
+            const winnerText = bet.prediction === 'home' ? bet.team1 : 
+                              (bet.prediction === 'away' ? bet.team2 : 'Empate');
+            betDetails = `<span><i class="fas fa-trophy"></i> ${winnerText}</span>`;
+        } else {
+            betDetails = `<span><i class="fas fa-futbol"></i> ${bet.prediction}</span>`;
+        }
+        
+        const matchDate = new Date(bet.match_date).toLocaleDateString('pt-BR');
+        
+        return `
+            <div class="bet-history-item">
+                <div class="bet-history-user">
+                    <i class="fas fa-user-circle"></i> ${escapeHtml(bet.user_name)}
+                </div>
+                <div class="bet-history-match">
+                    <i class="fas fa-futbol"></i> ${escapeHtml(bet.team1)} vs ${escapeHtml(bet.team2)}
+                    <small class="text-muted"> - ${matchDate}</small>
+                </div>
+                <div class="bet-history-details">
+                    ${betDetails}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Função para enviar mensagem
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    
+    console.log('Tentando enviar mensagem:', message);
+    
+    if (!message) {
+        console.log('Mensagem vazia');
+        return;
+    }
+    
+    fetch('chat_actions.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `action=send_message&message=${encodeURIComponent(message)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Resposta do servidor:', data);
+        if (data.success) {
+            input.value = '';
+            loadChatMessages();
+        } else {
+            console.error('Erro ao enviar:', data.message);
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: data.message || 'Não foi possível enviar a mensagem',
+                confirmButtonColor: '#667eea'
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Erro na requisição:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro de conexão',
+            text: 'Não foi possível conectar ao servidor',
+            confirmButtonColor: '#667eea'
+        });
+    });
+}
+
+// Função para atualizar badge de novas mensagens
+function updateChatBadge() {
+    const badge = document.getElementById('chatBadge');
+    const chatWindow = document.getElementById('chatWindow');
+    const lastMessageTime = localStorage.getItem('lastChatView');
+    
+    if (lastMessageTime && chatMessages.length > 0) {
+        const newMessages = chatMessages.filter(msg => new Date(msg.created_at) > new Date(lastMessageTime));
+        if (newMessages.length > 0 && !chatWindow.classList.contains('open')) {
+            badge.style.display = 'flex';
+            badge.textContent = newMessages.length > 9 ? '9+' : newMessages.length;
+        } else {
+            badge.style.display = 'none';
+        }
+    } else if (chatMessages.length > 0 && !chatWindow.classList.contains('open')) {
+        badge.style.display = 'flex';
+        badge.textContent = chatMessages.length > 9 ? '9+' : chatMessages.length;
+    } else {
+        badge.style.display = 'none';
+    }
+}
+
+// Função auxiliar para escapar HTML
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Inicializar chat
+function initChat() {
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatClose = document.getElementById('chatClose');
+    const chatSend = document.getElementById('chatSend');
+    const chatInput = document.getElementById('chatInput');
+    const chatTabs = document.querySelectorAll('.chat-tab');
+    
+    if (!chatToggle) {
+        console.log('Elementos do chat não encontrados');
+        return;
+    }
+    
+    // Adicionar classe para posicionar o chat mais acima
+    chatWindow.classList.add('chat-higher');
+    
+    // Abrir/fechar chat
+    chatToggle.addEventListener('click', () => {
+        console.log('Chat toggled');
+        chatWindow.classList.toggle('open');
+        if (chatWindow.classList.contains('open')) {
+            localStorage.setItem('lastChatView', new Date().toISOString());
+            document.getElementById('chatBadge').style.display = 'none';
+            loadChatMessages();
+            loadBetHistory();
+            if (pollingInterval) clearInterval(pollingInterval);
+            pollingInterval = setInterval(() => {
+                if (chatWindow.classList.contains('open')) {
+                    loadChatMessages();
+                }
+            }, 5000);
+        } else {
+            if (pollingInterval) {
+                clearInterval(pollingInterval);
+                pollingInterval = null;
+            }
+            updateChatBadge();
+        }
+    });
+    
+    chatClose.addEventListener('click', () => {
+        chatWindow.classList.remove('open');
+        if (pollingInterval) {
+            clearInterval(pollingInterval);
+            pollingInterval = null;
+        }
+        updateChatBadge();
+    });
+    
+    chatSend.addEventListener('click', () => {
+        console.log('Send button clicked');
+        sendMessage();
+    });
+    
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            console.log('Enter pressed');
+            sendMessage();
+        }
+    });
+    
+    // Tabs
+    chatTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+            chatTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            document.getElementById('chatTab').style.display = targetTab === 'chat' ? 'flex' : 'none';
+            document.getElementById('historyTab').style.display = targetTab === 'history' ? 'block' : 'none';
+            
+            if (targetTab === 'history') {
+                loadBetHistory();
+            }
+        });
+    });
+    
+    // Carregar mensagens inicialmente
+    console.log('Chat inicializado');
+}
+
+// Iniciar chat quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    initChat();
+});
+</script>
 
 <script>
     let currentMatchId = null;
@@ -1321,73 +2146,86 @@ $otherRanks = array_slice($ranking, 7);
         });
     });
 
-    // Confirmar aposta combinada
-    window.confirmComboBet = function(matchId, team1, team2) {
-        const winner = document.getElementById(`winner_${matchId}`).value;
-        const scoreHome = document.getElementById(`score_home_${matchId}`).value;
-        const scoreAway = document.getElementById(`score_away_${matchId}`).value;
+function updateScoreLabels(matchId, team1, team2) {
+    const winner = document.getElementById(`winner_${matchId}`).value;
+    const label = document.getElementById(`score_label_${matchId}`);
+    const helper = document.getElementById(`score_helper_${matchId}`);
 
-        if (!winner) {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Atenção!',
-                text: 'Por favor, selecione o vencedor da partida!',
-                confirmButtonColor: '#667eea'
-            });
-            return;
-        }
+    if (winner === 'home') {
+        label.innerHTML = `<i class="fas fa-chart-line"></i> Placar (${team1} × ${team2})`;
+        helper.textContent = `Primeiro número = gols do ${team1}`;
+    } else if (winner === 'away') {
+        label.innerHTML = `<i class="fas fa-chart-line"></i> Placar (${team2} × ${team1})`;
+        helper.textContent = `Primeiro número = gols do ${team2}`;
+    } else if (winner === 'draw') {
+        label.innerHTML = `<i class="fas fa-chart-line"></i> Placar`;
+        helper.textContent = `Ex: 1 × 1`;
+    }
+}
 
-        const score = `${scoreHome}-${scoreAway}`;
-        let winnerText = '';
+// ==================== CONFIRMAR APOSTA COMBINADA ====================
+window.confirmComboBet = function(matchId, team1, team2) {
+    const winnerSelect = document.getElementById(`winner_${matchId}`);
+    const firstSelect  = document.getElementById(`score_first_${matchId}`);
+    const secondSelect = document.getElementById(`score_second_${matchId}`);
 
-        if (winner === 'home') {
-            winnerText = team1;
-        } else if (winner === 'away') {
-            winnerText = team2;
-        } else {
-            winnerText = 'Empate';
-        }
+    const winner = winnerSelect ? winnerSelect.value : '';
+    const first  = firstSelect  ? firstSelect.value  : '0';
+    const second = secondSelect ? secondSelect.value : '0';
 
-        currentMatchId = matchId;
-        currentBetData = {
-            type: 'combo',
-            winner: winner,
-            winnerText: winnerText,
-            score: score,
-            scoreHome: scoreHome,
-            scoreAway: scoreAway
-        };
+    if (!winner) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Atenção!',
+            text: 'Por favor, selecione o vencedor da partida!',
+            confirmButtonColor: '#667eea'
+        });
+        return;
+    }
 
-        const modalBody = document.getElementById('modalBody');
-        modalBody.innerHTML = `
-            <div class="text-center">
-                <i class="fas fa-gem" style="font-size: 3rem; color: #667eea;"></i>
-                <h5 class="mt-3">Confirmar Aposta Combinada</h5>
-                <div class="alert alert-info mt-3">
-                    <strong>${team1} VS ${team2}</strong>
-                    <div class="mt-2">
-                        <span class="badge bg-primary p-2">
-                            🏆 Vencedor: ${winnerText}
-                        </span>
-                        <span class="badge bg-info p-2 ms-2">
-                            ⚽ Placar: ${score}
-                        </span>
-                    </div>
-                    <hr>
-                    <div class="text-start">
-                        <small><i class="fas fa-star text-warning"></i> Pontuação máxima: 4 pontos</small><br>
-                        <small><i class="fas fa-check-circle text-success"></i> Acertando vencedor (1 ponto) + placar exato (3 pontos)</small>
-                    </div>
-                </div>
-                <p class="mt-2">Deseja confirmar esta aposta?</p>
-            </div>
-        `;
+    let score = '';
+    let winnerText = '';
 
-        if (!confirmModal) {
-            confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
-        }
-        confirmModal.show();
+    if (winner === 'home') {
+        score = `${first}-${second}`;
+        winnerText = team1;
+    } else if (winner === 'away') {
+        score = `${second}-${first}`;   // Mantém ordem home-away correta
+        winnerText = team2;
+    } else {
+        score = `${first}-${second}`;
+        winnerText = 'Empate';
+    }
+
+    currentMatchId = matchId;
+    currentBetData = {
+        type: 'combo',
+        winner: winner,
+        winnerText: winnerText,
+        score: score,
+        scoreHome: winner === 'home' ? first : (winner === 'away' ? second : first),
+        scoreAway: winner === 'home' ? second : (winner === 'away' ? first : second)
     };
+
+    const modalBody = document.getElementById('modalBody');
+    modalBody.innerHTML = `
+        <div class="text-center">
+            <i class="fas fa-gem" style="font-size: 3rem; color: #667eea;"></i>
+            <h5 class="mt-3">Confirmar Aposta Combinada</h5>
+            <div class="alert alert-info mt-3">
+                <strong>${team1} VS ${team2}</strong><br><br>
+                <span class="badge bg-primary p-2">🏆 Vencedor: ${winnerText}</span><br><br>
+                <span class="badge bg-info p-2">⚽ Placar: ${score}</span>
+            </div>
+            <p class="mt-2">Deseja confirmar esta aposta?</p>
+        </div>
+    `;
+
+    if (!confirmModal) {
+        confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+    }
+    confirmModal.show();
+};
 
     // SALVAR APOSTA
     document.getElementById('confirmBetBtn').addEventListener('click', function() {
